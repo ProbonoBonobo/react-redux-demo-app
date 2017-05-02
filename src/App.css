@@ -290,8 +290,8 @@ ul > li {
   color: var(--arstotzka-ochre);
   font-weight: 100;
   font-style: normal;
-  border-top-width: 0.1px;
-  border-right-width: 0.1px;
+  border-top-width: 1px;
+  border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
   border-top-style: solid;

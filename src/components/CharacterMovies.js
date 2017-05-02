@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 const CharacterMovies = ({ movies }) =>
   <div id='character-movies' className='col-md-6'>
-    <h1>Movies</h1>
-    <ul>
+    <h2>Movies</h2>
+    <ul class="data-wrapper">
       {movies.map(movie => {
         const dateArray = movie.release_date.split('-');
 

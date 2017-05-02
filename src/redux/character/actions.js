@@ -4,11 +4,18 @@ export const SET_CURRENT_CHARACTER = 'SET_CURRENT_CHARACTER';
 export const SET_CHARACTER_PROFILE = 'SET_CHARACTER_PROFILE';
 export const SET_CHARACTER_WORLD = 'SET_CHARACTER_WORLD';
 export const SET_CHARACTER_MOVIES = 'SET_CHARACTER_MOVIES';
+export const ACTIVATE_CHARACTER = 'ACTIVATE_CHARACTER';
 
+export function setActiveCharacter(profile) {
+    return {
+        type: ACTIVATE_CHARACTER,
+        profile,
+    }
+}
 export function setCurrentCharacter(id) {
-  return {
-    type: SET_CURRENT_CHARACTER,
-    id,
+    return {
+      type: SET_CURRENT_CHARACTER,
+      id,
   };
 }
 
@@ -24,9 +31,10 @@ export function getCharacterProfile(id) {
     fetch(`${API_URL}/people/${id}`)
       .then(res => res.json())
       .then(profile => {
-        dispatch(setCharacterProfile(profile));
-        dispatch(getCharacterWorld(profile.homeworld));
-        dispatch(getCharacterMovies(profile.films));
+          dispatch(setActiveCharacter(id));
+          dispatch(setCharacterProfile(profile));
+          dispatch(getCharacterWorld(profile.homeworld));
+          dispatch(getCharacterMovies(profile.films));
       });
 }
 
@@ -63,3 +71,13 @@ export function getCharacterMovies(moviesUrls) {
       dispatch(setCharacterMovies(movies))
     );
 }
+
+// export function setActiveCjaracter(classList) {
+//     return {
+//         type: SET_ACTIVE_CLASS,
+//         profile,
+//     };
+//
+// }
+// export function getActiveCharacter(prop) {
+//     return dispatch =>

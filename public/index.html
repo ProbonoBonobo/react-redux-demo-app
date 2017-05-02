@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>export function getDevelopmentServer( kevin_zeidler ) { return dispatch => </title>
+    <style>
+      :root {
+        --main-bg-color: brown;
+        --arstotzka-marine: #516B6B;
+        --arstotzka-ochre: #cf433e;
+        --arstotzka-background: #211f1e;
+        --arstotzka-foreground: #EDEBE6;
+        --arstotzka-olive:#70807B;
+        --arstotzka-keyword: #A2A797;
+        --color-bg: #211f1e;
+        --color-fg: #A2A797;
+        --color-body-fg: #dcccb2;
+        --color-body-bg: #262523;
+        --color-1: #70807B;
+        --color-2: #cf433e;
+        --color-3: #a5e3d0;
+        --color-4: #EDEBE6;
+        --color-5: #65737e;
+        --color-6: #3f3a36;
+
+      }
+      html, body {
+        background-color: rgba(38,37,35, .2);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin : 0;
+        padding: 0;
+
+
+      }
+      /*.scanlines {*/
+      /*background-image: linear-gradient(90deg,*/
+      /*#223 25%, #450 25%, #410 50%,*/
+      /*#230 50%, #210 75%, #200 75%, #190);*/
+      /*background-size: 6px 6px;*/
+      /*}*/
+
+
+
+      #supercontainer {
+        background:url('../src/dist/images/scanlines.png');
+        color: var(--color-fg);
+        top: 0px;
+        font-family: "Input Serif";
+        text-transform: uppercase;
+        font-weight: 800;
+        /*font-style: uppercase;*/
+        text-align: center;
+        vertical-align: center;
+        font-size: 50px;
+        width: 100%;
+        height: 16vh;
+      }
+
+      h1, h2 {
+        color: var(--color-3);
+        font-family: "Input Sans";
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size:28px;
+        letter-spacing: -1px;
+        transform: translateX(6.2px);
+      }
+
+      #app-container {
+        background: none !important;
+        text-align: center;
+      }
+
+      ul {
+
+      }
+
+
+      ul > li {
+
+        list-style: none;
+        cursor: pointer;
+        line-height: 26px;
+        color: var(--color-fg);
+        font-family: "Input Sans";
+        font-weight: 300;
+        background:url('../src/dist/images/scanlines.png');
+      }
+
+      #character-list > ul > li:hover {
+
+        border-radius: 4px;
+        border: 1px var(--arstotzka-olive) solid;
+        color: var(--arstotzka-foreground)
+
+      }
+      #character-list , #character-world, #character-profile, #character-movies{
+
+        padding-top: 20.5px;
+        min-height: 366px;
+        opacity:0;
+        display:inline;
+        position:relative;
+        /*margin-left:-56px;*/
+        transition: all 2s;
+        -webkit-animation: fade-in 3s forwards;
+        -webkit-animation-delay: 0.5s;
+      }
+      @-webkit-keyframes fade-in{
+        from{
+          opacity:0;
+          top:0px;
+        }
+        to{
+          opacity:1;
+          top:-5px;
+        }
+      }
+
+      .active-character {
+        color: var(--color-4)
+      }
+      .data-wrapper {
+        margin: 15px auto;
+
+      }
+      .data-wrapper > li {
+        transition: all 2s;
+        animation: text-flicker 3s linear infinite;
+      }
+
+
+      .display-register {
+        /*left: 0px;*/
+        /*top: 0px;*/
+        /*position: relative;*/
+        /*margin: 0 auto;*/
+
+        height: 242px;
+        transform: translate3d(-200px, 0, 0);
+        width: 300px;
+      }
+      .input-container {
+        position: absolute;
+        height: 133px;
+        width: 600px;
+        margin: 0 auto;
+        left: 0px;
+        right: 0px;
+
+      }
+      .noselect {
+        user-select: none;
+      }
+      .input-label {
+
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        right: 0px;
+        height: 80px;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-bottom: 3px;
+        margin-left: auto;
+        bottom: 55px;
+        /*background-color: white;*/
+        width: 200px;
+        font-size: 13px;
+        color: rgb(166, 166, 166);
+        text-transform: uppercase;
+        padding-top: 10px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      .link {
+        text-align: center;
+      }
+      .input-label-text:before {
+
+      }
+      .input-label-text {
+        background-color: var(--color-body-bg);
+        opacity: 1;
+        position: absolute;
+
+        /*text-align: center;*
+        b/
+         */
+        display: inline-block;
+        right: 0px;
+        left: 0px;
+        width: 150px;
+        height: 15px;
+        font-family: "Input Serif";
+        margin-left: auto;
+        margin-right: auto;
+        transform: translate3d(200px, -10px, 0);
+        outline-color: initial;
+        outline-style: initial;
+        outline-width: 0px;
+        background-image: initial;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: var(--arstotzka-olive);
+        border-right-color: var(--arstotzka-olive);
+        border-bottom-color:var(--arstotzka-olive);
+        border-left-color: var(--arstotzka-olive);
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: dashed;
+        border-right-style: dashed;
+        border-bottom-style: dashed;
+        border-left-style: dashed;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAALklEQVQYV2NUlJf7zwAF2g7uDIwwARDn1oVzEAEY5/eH1wyMPvGp/0EyIA4IAAA0FBVVwxEu3QAAAABJRU5ErkJggg==') repeat;
+
+      }
+      .source-input {
+        height: 75px;
+        font-size: 14px;
+        padding-top: 26px;
+        /*padding-right: 10px;*/
+        padding-bottom: 0px;
+        /*padding-left: 10px;*/
+
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        /*background-color: var(--arstotzka-background);*/
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        text-transform: none;
+        font-family:  "Orbitron", "Input Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+        color: var(--arstotzka-ochre);
+        font-weight: 100;
+        font-style: normal;
+        border-top-width: 0.1px;
+        border-right-width: 0.1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: var(--arstotzka-olive);
+        border-right-color: var(--arstotzka-olive);
+        border-bottom-color:var(--arstotzka-olive);
+        border-left-color: var(--arstotzka-olive);
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAATklEQVQoU2NUlJf7z4AF/Gf9yyAvJs3AiE0BTPLhq6eYClAkfzOjKkCXBNkMtwKbJFwBLkmwAgUV6f8g14Id9JsZwz+M9lZm/3FJglQDAOH6MkPXqfZgAAAAAElFTkSuQmCC') repeat;
+        font-size: 16px;
+        letter-spacing: 1.4px;
+        margin-bottom: 20px;
+        left: 0px;
+        /*transform: translate3d(-50px, 0, 0);*/
+        /*margin-right: auto;*/
+        /*margin-left: auto;*/
+        width: 600px;
+        transition-duration: 0.25s, 0.25s;
+        transition-timing-function: initial, initial;
+        transition-delay: initial, initial;
+        transition-property: width, border;
+        /*min-width: 300px;*/
+        /*max-width: 50%;*/
+      }
+      * { box-sizing: border-box; }
+      .video-background {
+        background: #000;
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -99;
+      }
+      .video-foreground,
+      .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      #vidtop-content {
+        top: 0;
+        color: #fff;
+      }
+      .vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+      .vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+      .vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+      @media (min-aspect-ratio: 16/9) {
+        .video-foreground { height: 300%; top: -100%; }
+      }
+      @media (max-aspect-ratio: 16/9) {
+        .video-foreground { width: 300%; left: -100%; }
+      }
+      @media all and (max-width: 600px) {
+        .vid-info { width: 50%; padding: .5rem; }
+        .vid-info h1 { margin-bottom: .2rem; }
+      }
+      @media all and (max-width: 500px) {
+        .vid-info .acronym { display: none; }
+      }
+    </style>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>export function getDevelopmentServer( kevin_zeidler ) { return dispatch => </title>
+  </head>
+  <body>
+    <!--<div id="root"></div>-->
+    <div id="supercontainer"></div>
+    <div id="root"></div>
+    <div id="app-container">
+      <div id="option0"></div>
+    </div>
+
+    <div class="video-background">
+      <div class="video-foreground">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/P5_GlAOCHyE?autoplay=1&origin=http://localhost:8080" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>

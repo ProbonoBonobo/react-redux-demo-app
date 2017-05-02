@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
+
 const CharacterProfile = ({ profile, world }) =>
 
   <div id='character-profile' className='col-md-6'>

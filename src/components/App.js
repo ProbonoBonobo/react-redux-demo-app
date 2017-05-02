@@ -4,9 +4,16 @@ import CharacterProfile from './CharacterProfile';
 import CharacterWorld from './CharacterWorld';
 import CharacterMovies from './CharacterMovies';
 import ActiveCharacter from './ActiveCharacter';
+// import SVGTexture from './SVGTexture';
+
+/*
+ Example: */
+
+     // return (
+     //
+     // );
 
 const App = () =>
-
   <div className='container'>
       <div className='row'>
          <ActiveCharacter />
@@ -21,4 +28,6 @@ const App = () =>
     </div>
   </div>;
 
+
 export default App;
+

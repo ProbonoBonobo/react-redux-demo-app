@@ -11,6 +11,7 @@ import './App.css';
 
 
 
+
 // Create redux store
 const store = createStore(reducer, compose(
     applyMiddleware(thunk),

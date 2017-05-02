@@ -361,3 +361,6 @@ ul > li {
   .vid-info .acronym { display: none; }
 }
 /*.source-input:focus {*/
+#labelB, #label, .source-input {
+  border-width: 1px !important;
+}
